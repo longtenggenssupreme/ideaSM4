@@ -1,19 +1,11 @@
+import org.apache.commons.codec.binary.Base64;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-import java.nio.charset.StandardCharsets;
-import java.security.Key;
-import java.security.NoSuchAlgorithmException;
-import java.security.NoSuchProviderException;
-import java.security.SecureRandom;
-import java.security.Security;
-import java.util.Arrays;
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.spec.SecretKeySpec;
-
-import org.apache.commons.codec.digest.DigestUtils;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.bouncycastle.pqc.math.linearalgebra.ByteUtils;
-import org.apache.commons.codec.binary.Base64;
+import java.security.*;
+import java.util.Arrays;
 
 /**
  * sm4加密算法工具类
@@ -37,7 +29,7 @@ public class Sm4Util {
     // 加密算法/分组加密模式/分组填充方式
     // PKCS5Padding-以8个字节为一组进行分组加密
     // 定义分组加密模式使用：PKCS5Padding
-    public static final String ALGORITHM_NAME_ECB_PADDING7 = "SM4/ECB/PKCS5Padding";
+    public static final String ALGORITHM_NAME_ECB_PADDING5 = "SM4/ECB/PKCS5Padding";
     public static final String ALGORITHM_NAME_ECB_PADDING = "SM4/ECB/PKCS7Padding";
     // 64-16位16进制；128-32位16进制；256-64位16进制
     public static final int DEFAULT_KEY_SIZE = 128;
