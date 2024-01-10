@@ -1,15 +1,12 @@
-import org.apache.axis.client.Call;
-import org.apache.axis.client.Service;
-import org.apache.axis.soap.SOAPConstants;
-
-import javax.xml.namespace.QName;
-import java.net.URL;
+package Longteng;
+//import org.apache.axis.client.Call;
+//import org.apache.axis.client.Service;
 
 public class Longteng {
 
     public static void main(String[] args) {
-        TestWebserviceHelloWorld3();
-        //TestSM334455();
+        //TestWebserviceHelloWorld3();
+        TestSM334455();
         /*try {
 
             String json = "{\"name\":\"Marydon\",\"website\":\"http://www.cnblogs.com/Marydon20170307\"}";
@@ -64,24 +61,27 @@ public class Longteng {
         try {
             //String url = "http://localhost:8012/WebService1.asmx";
             //String namespace = "http://tempuri.org/";
-            Service service = new Service();
-            Call call = (Call) (new Service()).createCall();
-            call.setTargetEndpointAddress(new URL("http://localhost:8012/WebService1.asmx"));
-            call.setOperationName(new QName("http://tempuri.org/", "HelloWorld3"));
-            call.setTimeout(30000);
-            call.setUseSOAPAction(true);
-            call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
+            //Service service = new Service();
+            //Call call = (Call) (new Service()).createCall();
+            //call.setTargetEndpointAddress(new URL("http://localhost/WebAppWebService/WebService1.asmx"));
+            //call.setOperationName(new QName("http://tempuri.org/", "HelloWorld2"));
+            //call.setTimeout(30000);
+            //call.setUseSOAPAction(true);
+            //call.setSOAPVersion(SOAPConstants.SOAP11_CONSTANTS);
             //解决 提示System.Web.Services.Protocols.SoapException: 服务器未能识别 HTTP 头 SOAPAction 的值: 。的错误问题
             // SOAP 1.1 必须添加SOAPAction，SOAP 1.2 则不能添加SOAPAction
-            call.setSOAPActionURI("http://tempuri.org/HelloWorld3");
-            String re = (String) call.invoke(new String[]{"1", "pass"});
-            System.out.println(re);
+            //call.setSOAPActionURI("http://tempuri.org/HelloWorld2");
+            //String re = (String) call.invoke(new String[]{"1"});
+            //System.out.println(re);
 
-            //Call call=(Call)(new Service()).createCall();
-            //call.setTargetEndpointAddress(new URL("http://127.0.0.1:7001/hnCardService/services/CardService"));
-            //call.setOperationName(new QName("http://ws.apache.org/axis2","getCard"));
-            //call.setTimeout(30000);
-            //String re=(String)call.invoke(new String[]{"user","pass","F20000015","420503198104191819","周玉磊","440200"});
+
+//            Service service = new Service();
+//            Call call = (Call) (new Service()).createCall();
+//            call.setTargetEndpointAddress(new URL("http://10.120.43.126:7001/hnCardService/services/CardService"));
+//            call.setOperationName(new QName("http://ws.apache.org/axis2", "allDsjk"));
+//            call.setTimeout(30000);
+//            String re = (String) call.invoke(new String[]{"419900NTDZCS"});
+            //String re=(String)call.invoke(new String[]{"419900NTDZCS","4199NTDZJH","420503198104191819","周玉磊","4402009"});
             //System.out.println(re);
         } catch (Exception e) {
             System.err.println(e.toString());
@@ -90,18 +90,18 @@ public class Longteng {
 
     public static void GetStudent() {
         try {
-            String url = "http://localhost:9999/WebService.asmx";
-            String namespace = "http://tempuri.org/";
-            Service service = new Service();
-            Call call = (Call) service.createCall();
-            QName qname = new QName(namespace, "GetdbData"); //设置命名空间和需要调用的方法名
-            call.setOperationName(qname);
-            call.setTargetEndpointAddress(url);
-            call.setSOAPActionURI(namespace + "GetdbData");
-            call.addParameter(new QName(namespace, "Name"), org.apache.axis.encoding.XMLType.XSD_STRING, javax.xml.rpc.ParameterMode.IN);// 接口的参数
-            call.setReturnType(org.apache.axis.encoding.XMLType.XSD_STRING);//设置返回类型
-            String result = (String) call.invoke(new Object[]{"Tom"});
-            System.out.println("结果: \n" + result);
+//            String url = "http://localhost:9999/WebService.asmx";
+//            String namespace = "http://tempuri.org/";
+//            Service service = new Service();
+//            Call call = (Call) service.createCall();
+//            QName qname = new QName(namespace, "GetdbData"); //设置命名空间和需要调用的方法名
+//            call.setOperationName(qname);
+//            call.setTargetEndpointAddress(url);
+//            call.setSOAPActionURI(namespace + "GetdbData");
+//            call.addParameter(new QName(namespace, "Name"), org.apache.axis.encoding.XMLType.XSD_STRING, javax.xml.rpc.ParameterMode.IN);// 接口的参数
+//            call.setReturnType(org.apache.axis.encoding.XMLType.XSD_STRING);//设置返回类型
+//            String result = (String) call.invoke(new Object[]{"Tom"});
+//            System.out.println("结果: \n" + result);
         } catch (Exception e) {
             System.err.println(e.toString());
         }
